@@ -1,5 +1,17 @@
+import cf from "../data/cf";
+
 const element = document.getElementById("btn-submit");
 element.addEventListener("click", AllDepencency);
+
+
+cf.map((nilai_cf, index) => {
+  $('#CF-row1').append($('<option value="' + index + '">' + nilai_cf.input + '</option>'))
+})
+// for(const i in cf) {
+//   for(const j in cf[i]) {
+//     $('#CF-row1').append($('<option value="' + i + '">' + cf['input'][i] + '</option>'))
+//   }
+// }
 
 const obj_temp = {
   kecakapan: "",
