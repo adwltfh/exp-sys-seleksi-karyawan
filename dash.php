@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sistem Pakar Kelompok 10</title>
   <!-- Link CSS -->
-  <link rel="stylesheet" href="./asset/css/style.css" />
+  <link rel="stylesheet" href="asset/css/style.css" type="text/css" />
   <!-- Link Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
@@ -18,13 +18,13 @@
 <body>
   <!-- Navbar -->
   <?php include('navbar.php'); ?>
-  <div class="dash-container">
-    <div>
-      <div class="dash-title">
-        <h3>Silakan mengisi form di bawah ini agar megetahui hasil seleksi.</h3>
-      </div>
+  <div class="dash-title" style="text-align: center">
+    <h3>Silakan mengisi form di bawah ini agar megetahui hasil seleksi.</h3>
+  </div>
 
-      <div class="dash-content">
+  <div class="container justify-content-center">
+    <div class="row">
+      <div class=" dash-content">
         <!-- content -->
         <form action="" onsubmit="return false">
           <!-- First Row -->
@@ -34,12 +34,12 @@
                 <label class="col-form-label">Hasil Nilai Ujian Teori</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="teori" class="form-control" name="teori" placeholder="Masukkan nilai dari rentang 0-100!" />
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row1" class="form-control" name="CF-row1" placeholder="Masukkan Nilai Kepastian" />
               </div>
@@ -52,12 +52,12 @@
                 <label class="col-form-label">Hasil Nilai Ujian Praktik</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="praktik" class="form-control" name="praktik" placeholder="Masukkan nilai dari rentang 0-100!" />
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row2" class="form-control" name="CF-row2" placeholder="Masukkan Nilai Kepastian" />
               </div>
@@ -70,14 +70,14 @@
                 <label class="col-form-label">Hasil Nilai Ujian Kepribadian</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <select id="kepribadian" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                 <option id="selected" value="1">Baik</option>
                 <option value="2">Sedang</option>
                 <option value="3">Kurang</option>
               </select>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row3" class="form-control" name="CF-row3" placeholder="Masukkan Nilai Kepastian" />
               </div>
@@ -90,13 +90,13 @@
                 <label class="col-form-label">Apakah usia Anda memenuhi kriteria yang diinginkan?</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <select id="usia" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                 <option id="selected" value="1">Memenuhi</option>
                 <option value="2">Tidak Memenuhi</option>
               </select>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row4" class="form-control" name="CF-row4" placeholder="Masukkan Nilai Kepastian" />
               </div>
@@ -109,13 +109,13 @@
                 <label class="col-form-label">Apakah domisili Anda memenuhi kriteria yang diinginkan?</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <select id="domisili" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                 <option id="selected" value="1">Memenuhi</option>
                 <option value="2">Tidak Memenuhi</option>
               </select>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row5" class="form-control" name="CF-row5" placeholder="Masukkan Nilai Kepastian" />
               </div>
@@ -128,13 +128,13 @@
                 <label class="col-form-label">Apakah ipk Anda memenuhi kriteria yang diinginkan?</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <select id="ipk" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                 <option id="selected" value="1">Memenuhi</option>
                 <option value="2">Tidak Memenuhi</option>
               </select>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row6" class="form-control" name="CF-row6" placeholder="Masukkan Nilai Kepastian" />
               </div>
@@ -147,13 +147,13 @@
                 <label class="col-form-label">Apakah pengalam kerja Anda memenuhi kriteria yang diinginkan?</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <select id="pk" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                 <option id="selected" value="1">Memenuhi</option>
                 <option value="2">Tidak Memenuhi</option>
               </select>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row7" class="form-control" name="CF-row7" placeholder="Masukkan Nilai Kepastian" />
               </div>
@@ -166,14 +166,14 @@
                 <label class="col-form-label">Hasil Nilai Ujian Wawancara Anda</label>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <select id="wawancara" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                 <option id="selected" value="1">Baik</option>
                 <option value="2">Sedang</option>
                 <option value="3">Kurang</option>
               </select>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <div class="col-auto">
                 <input type="text" id="CF-row8" class="form-control" name="CF-row8" placeholder="Masukkan Nilai Kepastian" />
               </div>
