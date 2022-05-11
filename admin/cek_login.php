@@ -32,7 +32,7 @@ if ($log == 'pasien') {
 		$_SESSION['namauser'] = $r['id_user'];
 		$_SESSION['passuser'] = $r['password'];
 
-		header('location:../dash.php?module=konsul');
+		header('location:../home.php');
 	} else {
 		echo "<center>Login gagal! Kemungkinan data yang anda masukkan tidak benar, atau anda tidak terdaftar!!!<br>";
 		echo "<a href=../home.php?menu=home><b>ULANGI LAGI</b></a>|
