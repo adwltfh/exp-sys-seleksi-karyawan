@@ -26,12 +26,12 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
   <body>
     <!-- Navbar -->
     <?php include('../navbar.php'); ?>
-    <div class="dash-container" id="dash-container" style="display: flex;justify-content: center;">
-      <div>
-        <div class="dash-title" style="text-align: center">
-          <h3>Selamat Datang di Sistem Penerimaan Karyawan</h3>
-        </div>
+    <div class="dash-title" style="text-align: center">
+      <h3>Selamat Datang di Sistem Penerimaan Karyawan</h3>
+    </div>
 
+    <div class="container justify-content-center">
+      <div class="row">
         <div class=" dash-content">
           <!-- content -->
           <form action="" onsubmit="return false">
@@ -42,12 +42,12 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Hasil Nilai Ujian Teori</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="teori" class="form-control" name="teori" placeholder="Masukkan nilai dari rentang 0-100!" />
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row1" class="form-control" name="CF-row1" placeholder="Masukkan Nilai Kepastian" />
                 </div>
@@ -60,12 +60,12 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Hasil Nilai Ujian Praktik</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="praktik" class="form-control" name="praktik" placeholder="Masukkan nilai dari rentang 0-100!" />
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row2" class="form-control" name="CF-row2" placeholder="Masukkan Nilai Kepastian" />
                 </div>
@@ -78,14 +78,14 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Hasil Nilai Ujian Kepribadian</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <select id="kepribadian" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                   <option id="selected" value="1">Baik</option>
                   <option value="2">Sedang</option>
                   <option value="3">Kurang</option>
                 </select>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row3" class="form-control" name="CF-row3" placeholder="Masukkan Nilai Kepastian" />
                 </div>
@@ -98,13 +98,13 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Apakah usia Anda memenuhi kriteria yang diinginkan?</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <select id="usia" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                   <option id="selected" value="1">Memenuhi</option>
                   <option value="2">Tidak Memenuhi</option>
                 </select>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row4" class="form-control" name="CF-row4" placeholder="Masukkan Nilai Kepastian" />
                 </div>
@@ -117,13 +117,13 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Apakah domisili Anda memenuhi kriteria yang diinginkan?</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <select id="domisili" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                   <option id="selected" value="1">Memenuhi</option>
                   <option value="2">Tidak Memenuhi</option>
                 </select>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row5" class="form-control" name="CF-row5" placeholder="Masukkan Nilai Kepastian" />
                 </div>
@@ -136,13 +136,13 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Apakah ipk Anda memenuhi kriteria yang diinginkan?</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <select id="ipk" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                   <option id="selected" value="1">Memenuhi</option>
                   <option value="2">Tidak Memenuhi</option>
                 </select>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row6" class="form-control" name="CF-row6" placeholder="Masukkan Nilai Kepastian" />
                 </div>
@@ -155,13 +155,13 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Apakah pengalam kerja Anda memenuhi kriteria yang diinginkan?</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <select id="pk" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                   <option id="selected" value="1">Memenuhi</option>
                   <option value="2">Tidak Memenuhi</option>
                 </select>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row7" class="form-control" name="CF-row7" placeholder="Masukkan Nilai Kepastian" />
                 </div>
@@ -174,14 +174,14 @@ if (empty($_SESSION['namauser']) and empty($_SESSION['passuser'])) {
                   <label class="col-form-label">Hasil Nilai Ujian Wawancara Anda</label>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <select id="wawancara" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" placeholder="Small" aria-describedby="inputGroup-sizing-lg">
                   <option id="selected" value="1">Baik</option>
                   <option value="2">Sedang</option>
                   <option value="3">Kurang</option>
                 </select>
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <div class="col-auto">
                   <input type="text" id="CF-row8" class="form-control" name="CF-row8" placeholder="Masukkan Nilai Kepastian" />
                 </div>
