@@ -1,5 +1,30 @@
+import cf from "../data/cf";
+
 const element = document.getElementById("btn-submit");
 element.addEventListener("click", AllDepencency);
+
+
+let cf_option = $('#CF-row1')
+cf_option.empty()
+cf_option.append('<option selected="true" disabled>Pilih Faktor Keyakinan</option>')
+cf_option.prop('selectedIndex', 0)
+
+$.getJSON(cf, ((data) => {
+  $.each(data, ((key, entry) => {
+    cf_option.append($('<option></option>').attr('value', key).text(entry.input))
+  }))
+}))
+
+// cf.map((nilai_cf, index) => {
+//   document.getElementById('CF-row1').append($('<option value="' + index + '">' + nilai_cf.input + '</option>'))
+// })
+
+
+// for(const i in cf) {
+//   for(const j in cf[i]) {
+//     $('#CF-row1').append($('<option value="' + i + '">' + cf['input'][i] + '</option>'))
+//   }
+// }
 
 const obj_temp = {
   kecakapan: "",
@@ -55,22 +80,22 @@ async function kecakapan() {
     alert("Data yang dimasukkan salah!");
   } else if (nilai_teori > 80 && nilai_teori <= 100 && nilai_praktik > 80 && nilai_praktik <= 100) {
     obj_temp.kecakapan = "Bagus";
-    cf_rules_kecakapan = 0.85;
+    cf_rules_kecakapan = 0.8;
     let nilai_min = Math.abs(Math.min(cf_user.teori_cf, cf_user.praktik_cf));
     cf_temp_kecakapan = nilai_min * cf_rules_kecakapan;
   } else if (nilai_teori <= 80 && nilai_teori >= 0 && nilai_praktik > 80 && nilai_praktik <= 100) {
     obj_temp.kecakapan = "Sedang";
-    cf_rules_kecakapan = 0.8;
+    cf_rules_kecakapan = 0.6;
     let nilai_min = Math.abs(Math.min(cf_user.teori_cf, cf_user.praktik_cf));
     cf_temp_kecakapan = nilai_min * cf_rules_kecakapan;
   } else if (nilai_teori > 80 && nilai_teori <= 100 && nilai_praktik <= 80 && nilai_praktik >= 0) {
     obj_temp.kecakapan = "Sedang";
-    cf_rules_kecakapan = 0.8;
+    cf_rules_kecakapan = 0.7;
     let nilai_min = Math.abs(Math.min(cf_user.teori_cf, cf_user.praktik_cf));
     cf_temp_kecakapan = nilai_min * cf_rules_kecakapan;
   } else if (nilai_teori <= 80 && nilai_teori >= 0 && nilai_praktik <= 80 && nilai_praktik >= 0) {
     obj_temp.kecakapan = "Buruk";
-    cf_rules_kecakapan = 0.85;
+    cf_rules_kecakapan = 0.6;
     let nilai_min = Math.abs(Math.min(cf_user.teori_cf, cf_user.praktik_cf));
     cf_temp_kecakapan = nilai_min * cf_rules_kecakapan;
   }
@@ -85,43 +110,43 @@ async function biografi() {
   const pk = document.getElementById("pk").value;
   if (usia == "1" && domisili == "1" && ipk == "1" && pk == "1") {
     obj_temp.biografi = "Bagus";
-    cf_rules_biografi = 0.9;
+    cf_rules_biografi = 0.8;
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "1" && domisili == "1" && ipk == "1" && pk == "2") {
     obj_temp.biografi = "Sedang";
-    cf_rules_biografi = 0.85;
+    cf_rules_biografi = 0.7;
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "1" && domisili == "1" && ipk == "2" && pk == "1") {
     obj_temp.biografi = "Sedang";
-    cf_rules_biografi = 0.9;
+    cf_rules_biografi = 0.8;
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "1" && domisili == "1" && ipk == "2" && pk == "2") {
     obj_temp.biografi = "Kurang";
-    cf_rules_biografi = 0.75;
+    cf_rules_biografi = 0.8;
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "1" && domisili == "2" && ipk == "1" && pk == "2") {
     obj_temp.biografi = "Sedang";
-    cf_rules_biografi = 0.7;
+    cf_rules_biografi = 0.5;
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "1" && domisili == "2" && ipk == "2" && (pk == "2" || pk == "1")) {
     obj_temp.biografi = "Kurang";
-    cf_rules_biografi = 0.7;
+    cf_rules_biografi = 0.6;
     cf_user.ipk_cf = Math.abs(Math.max(pk));
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
-  } else if (usia == "2" && domisili == "2" && ipk == "2" && pk == "2") {
+  } else if (usia == "2" && domisili == "1" && ipk == "1" && pk == "2") {
     obj_temp.biografi = "Sedang";
-    cf_rules_biografi = 0.9;
+    cf_rules_biografi = 0.8;
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "2" && domisili == "1" && ipk == "1" && pk == "2") {
     obj_temp.biografi = "Kurang";
-    cf_rules_biografi = 0.7;
+    cf_rules_biografi = 0.8;
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "2" && domisili == "1" && ipk == "2" && (pk == "2" || pk == "1")) {
@@ -132,7 +157,7 @@ async function biografi() {
     cf_temp_biografi = nilai_min * cf_rules_biografi;
   } else if (usia == "2" && domisili == "2" && (ipk == "1" || ipk == "2") && (pk == "2" || pk == "1")) {
     obj_temp.biografi = "Kurang";
-    cf_rules_biografi = 0.9;
+    cf_rules_biografi = 1;
     cf_user.ipk_cf = Math.abs(Math.max(ipk));
     cf_user.ipk_cf = Math.abs(Math.max(pk));
     let nilai_min = Math.abs(Math.min(cf_user.usia_cf, cf_user.domisili_cf, cf_user.pk_cf, cf_user.ipk_cf));
@@ -182,15 +207,15 @@ async function AllDepencency() {
   await biografi();
   await wawancara();
   if ((obj_temp.kecakapan == "Bagus" || obj_temp.kecakapan == "Sedang") && (obj_temp.kepribadian == "Baik" || obj_temp.kepribadian == "Sedang") && (obj_temp.wawancara == "Baik" || obj_temp.wawancara == "Sedang")) {
-    rules_seleksi = 0.95;
-    nilai_cf_akhir = Math.abs(Math.min(cf_temp_kecakapan, cf_temp_kepribadian, cf_temp_wawancara) * rules_seleksi);
+    rules_seleksi = 0.8;
+    nilai_cf_akhir = Math.abs(Math.min(cf_rules_kecakapan, cf_temp_kepribadian, cf_temp_wawancara) * rules_seleksi);
     hasil_seleksi = "Lulus!";
     swal("Selamat Kamu Lulus", `dengan nilai kepercayaan ${nilai_cf_akhir}`, "success");
     console.log(nilai_cf_akhir);
     console.log(cf_temp_kecakapan, cf_temp_biografi, cf_temp_kepribadian, cf_temp_wawancara, nilai_cf_akhir, cf_rules_kecakapan, cf_rules_biografi);
   } else if (obj_temp.kecakapan == "Buruk" || obj_temp.kepribadian == "Kurang" || obj_temp.wawancara == "Kurang") {
-    rules_seleksi = 0.9;
-    nilai_cf_akhir = Math.abs(Math.max(cf_temp_kecakapan, cf_temp_kepribadian, cf_temp_wawancara) * rules_seleksi);
+    rules_seleksi = 0.6;
+    nilai_cf_akhir = Math.abs(Math.max(cf_rules_kecakapan, cf_temp_kepribadian, cf_temp_wawancara) * rules_seleksi);
     console.log(nilai_cf_akhir);
     hasil_seleksi = "Tidak Lulus";
     swal("Mohon Maaf Kamu Belum Lulus", `dengan nilai kepercayaan ${nilai_cf_akhir}`, "error");
